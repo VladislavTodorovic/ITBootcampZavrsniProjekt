@@ -54,7 +54,7 @@ public class ShoppingTests extends BaseTest {
         Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "3");
     //5. Odlazak na CheckoutStepOnePage:
         cartPage.getCheckoutButton().click();
-    //6. Unosenje podataka u polja na CheckoutStepOnePage
+    //6. Unosenje podataka u polja na CheckoutStepOnePage:
         Assert.assertTrue(checkoutStepOnePage.getContinueButton().isDisplayed());
         Assert.assertEquals(checkoutStepOnePage.getTitleCheckoutYourInformation().getText(), "Checkout: Your Information");
         checkoutStepOnePage.inputFirstName("Vlajke");
