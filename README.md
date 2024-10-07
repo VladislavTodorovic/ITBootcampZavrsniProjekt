@@ -1,1 +1,1 @@
-This is the final project for the IT Bootcamp course "Software Testing (QA)" organized by Fondacija Ana and Vlade Divac, which I completed in June 2024. The task was to write test cases and then create automated tests for: https://www.saucedemo.com/.
+This is the final project for the IT Bootcamp course "Software Testing (QA)" organized by "Fondacija Ana i Vlade Divac", which I completed in June 2024. The task was to write test cases and then create automated tests for: https://www.saucedemo.com/.
