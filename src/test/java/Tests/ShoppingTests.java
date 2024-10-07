@@ -60,13 +60,13 @@ public class ShoppingTests extends BaseTest {
         checkoutStepOnePage.inputFirstName("Vlajke");
         checkoutStepOnePage.inputLastName("Vlajkic");
         checkoutStepOnePage.inputZip("123");
-    //7. Odlazak na CheckoutStepTwoPage
+    //7. Odlazak na CheckoutStepTwoPage:
         checkoutStepOnePage.getContinueButton().click();
-    //8. Odlazak na CheckoutCompletePage
+    //8. Odlazak na CheckoutCompletePage:
         Assert.assertEquals(checkOutStepTwoPage.getTitleCheckoutOverview().getText(),"Checkout: Overview");
         Assert.assertTrue(checkOutStepTwoPage.getFinishButton().isDisplayed());
        checkOutStepTwoPage.getFinishButton().click();
-    //9. Povratak na Inventory Page
+    //9. Povratak na InventoryPage:
         Assert.assertTrue(checkoutCompletePage.getGetHomeButton().isDisplayed());
         Assert.assertEquals(checkoutCompletePage.getTitleCheckoutComplete().getText(),"Checkout: Complete!");
         checkoutCompletePage.getGetHomeButton().click();
@@ -161,7 +161,7 @@ public class ShoppingTests extends BaseTest {
     }
 
     @AfterMethod
-    public void izlaz(){
+    public void tearDown(){
     swagsLabsSidebar.clickOnHamburgerMenu();
     wait.until(ExpectedConditions.visibilityOf(swagsLabsSidebar.getResetAppStateLink()));
     swagsLabsSidebar.getResetAppStateLink().click();
