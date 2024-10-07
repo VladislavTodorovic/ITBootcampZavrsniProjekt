@@ -24,16 +24,16 @@ public class BaseTest {
 
 
     /*
-    Napisati test kejseve,
-    pa zatim napraviti automatske testove za https://www.saucedemo.com/
+    Write test cases, and then create automated tests for: https://www.saucedemo.com/
      */
 
     @BeforeClass
     public void setUp() {
     /*
     WebDriverManager.chromedriver().setup();
-    OVO VISE NE TREBA DA SE KUCA ZATO STO JE od Seleniuma 4.0.0 pa na dalje
-    WebDriverManager implementiran u Selenium. NE KUCATI VISE:
+    This should not be typed anymore, because from version Selenium 4.0.0
+    WebDriverManager is implemented into Selenium.
+    DON'T TYPE ANYMORE:
     WebDriverManager.chromedriver().setup();
      */
     }

@@ -35,38 +35,38 @@ public class ShoppingTests extends BaseTest {
     Assert.assertEquals(inventoryPage.getTitleProducts().getText(), "Products");
     Assert.assertTrue(inventoryPage.getProductSortContainer().isDisplayed());
     Assert.assertTrue(inventoryPage.getInventoryContainer().isDisplayed());
-    //1. Dodavanje 5 proizvoda u korpu:
+    //1. Adding 5 products to the cart:
         inventoryPage.getBackpackAddToCartButton().click();
         inventoryPage.getBikeLightAddToCartButton().click();
         inventoryPage.getBoltTSHirtAddToCartButton().click();
         inventoryPage.getFleeceJacketAddtoCartButton().click();
         inventoryPage.getOnesieAddtoCartButton().click();
         Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "5");
-    //2. Uklanjanje 1 proizvoda iz korpe:
+    //2. Removing 1 product from the cart:
         inventoryPage.getBackpackRemoveButton().click();
         Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "4");
-    //3. Odlazak na CartPage:
+    //3. Going to the CartPage:
         swagsLabsSidebar.getCartIcon().click();
-    //4. Uklanjanje 1 proizvoda iz korpe na CartPage:
+    //4. Removing 1 product from the cart on the CartPage:
         Assert.assertEquals(cartPage.getTitleYourCart().getText(), "Your Cart");
         Assert.assertTrue(cartPage.getCheckoutButton().isDisplayed());
         cartPage.getBikeLightRemoveCartButton().click();
         Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "3");
-    //5. Odlazak na CheckoutStepOnePage:
+    //5. Going to the CheckoutStepOnePage:
         cartPage.getCheckoutButton().click();
-    //6. Unosenje podataka u polja na CheckoutStepOnePage:
+    //6. Entering data in the fields on the CheckoutStepOnePage:
         Assert.assertTrue(checkoutStepOnePage.getContinueButton().isDisplayed());
         Assert.assertEquals(checkoutStepOnePage.getTitleCheckoutYourInformation().getText(), "Checkout: Your Information");
         checkoutStepOnePage.inputFirstName("Vlajke");
         checkoutStepOnePage.inputLastName("Vlajkic");
         checkoutStepOnePage.inputZip("123");
-    //7. Odlazak na CheckoutStepTwoPage:
+    //7. Going to the CheckoutStepTwoPage:
         checkoutStepOnePage.getContinueButton().click();
-    //8. Odlazak na CheckoutCompletePage:
+    //8. Going to the CheckoutCompletePage:
         Assert.assertEquals(checkOutStepTwoPage.getTitleCheckoutOverview().getText(),"Checkout: Overview");
         Assert.assertTrue(checkOutStepTwoPage.getFinishButton().isDisplayed());
        checkOutStepTwoPage.getFinishButton().click();
-    //9. Povratak na InventoryPage:
+    //9. Returning to the InventoryPage:
         Assert.assertTrue(checkoutCompletePage.getGetHomeButton().isDisplayed());
         Assert.assertEquals(checkoutCompletePage.getTitleCheckoutComplete().getText(),"Checkout: Complete!");
         checkoutCompletePage.getGetHomeButton().click();
@@ -79,7 +79,7 @@ public class ShoppingTests extends BaseTest {
         userLogin();
         Assert.assertEquals(inventoryPage.getTitleProducts().getText(), "Products");
 
-//1. Dodavanje 6 proizvoda u korpu:
+//1. Adding 6 products to the cart:
     Assert.assertEquals(inventoryPage.getTitleProducts().getText(), "Products");
     Assert.assertTrue(inventoryPage.getProductSortContainer().isDisplayed());
    inventoryPage.getBackpackAddToCartButton().click();
@@ -89,72 +89,72 @@ public class ShoppingTests extends BaseTest {
    inventoryPage.getOnesieAddtoCartButton().click();
    inventoryPage.gettShirtRedAddtoCartButton().click();
    Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "6");
-//2. Uklanjanje 1 proizvoda iz korpe:
+//2. Removing 1 product from the cart:
    inventoryPage.getBackpackRemoveButton().click();
     Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "5");
-//3. Odlazak na CartPage:
+//3. Going to the Cart Page:
     swagsLabsSidebar.getCartIcon().click();
     Assert.assertEquals(cartPage.getTitleYourCart().getText(), "Your Cart");
     Assert.assertTrue(cartPage.getCheckoutButton().isDisplayed());
-//4. Uklanjanje 1 proizvoda iz korpe na CartPage:
+//4. Removing 1 product from the cart on the CartPage:
     cartPage.getBikeLightRemoveCartButton().click();
     Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "4");
-//5. Vracanje sa CartPage na InventoryPage (klik na dugme Continue Shopping):
+//5. Returning from the CartPage to the InventoryPage (clicking the Continue Shopping button):
     cartPage.getContinueShoppingButton().click();
-//6. Dodavanje 1 proizvoda u korpu na InventoryPage:
+//6. Adding 1 product to the cart on the InventoryPage:
     Assert.assertEquals(inventoryPage.getTitleProducts().getText(), "Products");
     Assert.assertTrue(inventoryPage.getProductSortContainer().isDisplayed());
     inventoryPage.getBackpackAddToCartButton().click();
     Assert.assertEquals(swagsLabsSidebar.getCartIcon().getText(), "5");
-//7. Odlazak na CartPage:
+//7. Going to the CartPage:
     swagsLabsSidebar.getCartIcon().click();
-//8. Odlazak na CheckoutStepOnePage (klik na dugme Checkout):
+//8. Going to the CheckoutStepOnePage (clicking the Checkout button):
     Assert.assertEquals(cartPage.getTitleYourCart().getText(), "Your Cart");
     Assert.assertTrue(cartPage.getCheckoutButton().isDisplayed());
     cartPage.getCheckoutButton().click();
     Assert.assertTrue(checkoutStepOnePage.getContinueButton().isDisplayed());
     Assert.assertEquals(checkoutStepOnePage.getTitleCheckoutYourInformation().getText(), "Checkout: Your Information");
-//9. Odlazak na Cart Page (klik na dugme Cancel):
+//9. Going to the CartPage (clicking the Cancel button):
     checkoutStepOnePage.getCancelButton().click();
-//10. Odlazak na CheckoutStepOnePage (klik na dugme Checkout):
+//10. Going to the CheckoutStepOne Page (clicking the Checkout button):
     Assert.assertEquals(cartPage.getTitleYourCart().getText(), "Your Cart");
     Assert.assertTrue(cartPage.getCheckoutButton().isDisplayed());
     cartPage.getCheckoutButton().click();
-//11. Unos podataka na CheskoutStepOnePage:
+//11. Entering data in the fields on the CheckoutStepOnePage:
     Assert.assertTrue(checkoutStepOnePage.getContinueButton().isDisplayed());
     Assert.assertEquals(checkoutStepOnePage.getTitleCheckoutYourInformation().getText(), "Checkout: Your Information");
     checkoutStepOnePage.inputFirstName("Vlajke");
     checkoutStepOnePage.inputLastName("Vlajkic");
     checkoutStepOnePage.inputZip("123");
-//12. Odlazak na CheckoutStepTwoPage (klik na dugme Continue):
+//12. Going to the CheckoutStepTwoPage (clicking the Continue button):
     checkoutStepOnePage.getContinueButton().click();
     Assert.assertEquals(checkOutStepTwoPage.getTitleCheckoutOverview().getText(),"Checkout: Overview");
     Assert.assertTrue(checkOutStepTwoPage.getFinishButton().isDisplayed());
-//13. Odlazak na InventoryPage (klik na dugme Cancel):
+//13. Going to the InventoryPage (clicking the Cancel button):
     checkOutStepTwoPage.getCancelButton().click();
     Assert.assertEquals(inventoryPage.getTitleProducts().getText(), "Products");
     Assert.assertTrue(inventoryPage.getProductSortContainer().isDisplayed());
-//14. Odlazak na CartPage:
+//14. Going to the CartPage:
     swagsLabsSidebar.getCartIcon().click();
     Assert.assertEquals(cartPage.getTitleYourCart().getText(), "Your Cart");
     Assert.assertTrue(cartPage.getCheckoutButton().isDisplayed());
-//15. Odlazak na CheckoutStepOnePage (klik na dugme Checkout):
+//15. Going to the CheckoutStepOnePage (clicking the Checkout button):
     cartPage.getCheckoutButton().click();
     Assert.assertTrue(checkoutStepOnePage.getContinueButton().isDisplayed());
     Assert.assertEquals(checkoutStepOnePage.getTitleCheckoutYourInformation().getText(), "Checkout: Your Information");
-//16. Unos podataka na CheckoutStepOnePage:
+//16. Entering data in the fields on the CheckoutStepOnePage:
     checkoutStepOnePage.inputFirstName("Vlajke");
     checkoutStepOnePage.inputLastName("Vlajkic");
     checkoutStepOnePage.inputZip("123");
-//17. Odlazak na CheckoutStepTwoPage (klik na dugme Continue):
+//17. Going to the CheckoutStepTwo Page (clicking the Continue button):
     checkoutStepOnePage.getContinueButton().click();
     Assert.assertEquals(checkOutStepTwoPage.getTitleCheckoutOverview().getText(),"Checkout: Overview");
     Assert.assertTrue(checkOutStepTwoPage.getFinishButton().isDisplayed());
-//18. Odlazak na CheckoutCompletePage (klik na dugme Finish):
+//18. Going to the CheckoutCompletePage (clicking the Finish button):
     checkOutStepTwoPage.getFinishButton().click();
     Assert.assertTrue(checkoutCompletePage.getGetHomeButton().isDisplayed());
     Assert.assertEquals(checkoutCompletePage.getTitleCheckoutComplete().getText(),"Checkout: Complete!");
-//19. Odlazak na InventoryPage (klik na dugme Back Home):
+//19. Going to the InventoryPage (clicking the Back Home button):
     checkoutCompletePage.getGetHomeButton().click();
     Assert.assertTrue(inventoryPage.getProductSortContainer().isDisplayed());
     Assert.assertTrue(inventoryPage.getInventoryContainer().isDisplayed());
